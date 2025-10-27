@@ -1,5 +1,9 @@
 import React from "react"
 import Navbar from "./components/Navbar"
+import Home from "./pages/Home"
+import News from "./pages/News"
+import Regions from "./pages/Regions"
+import Contact from "./pages/Contact"
 import { Route, Routes } from "react-router-dom"
 
 function App() {

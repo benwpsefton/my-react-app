@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 export default function Navbar() {
     return (
@@ -19,16 +19,16 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse justify-content-end" id="main-nav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to="/home" id="current" className="nav-link text-light me-4">Home</Link>
+                            <CustomLink to="/" className="nav-link text-light me-4">Home</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/news" id="current" className="nav-link text-light me-4">News</Link>
+                            <CustomLink to="/news" className="nav-link text-light me-4">News</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/regions" id="current" className="nav-link text-light me-4">Regions</Link>
+                            <CustomLink to="/regions" className="nav-link text-light me-4">Regions</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/contact" id="current" className="nav-link text-light me-4">Contact</Link>
+                            <CustomLink to="/contact" className="nav-link text-light me-4">Contact</CustomLink>
                         </li>
                     </ul>
                 </div>
@@ -37,11 +37,13 @@ export default function Navbar() {
     )
 }
 
-function Customlink({ to, children, ...props}) {
-    const path = window.location.pathname
+function CustomLink({ to, children, ...props}) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end:true })
+
 
     return (
-        <li className={path === to ? "active" : ""}>
+        <li className={isActive ? "active" : ""}>
             <Link to={to} {...props}>
                 {children}
             </Link>
