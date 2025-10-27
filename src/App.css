@@ -1,0 +1,64 @@
+body {
+    margin-right: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 60px;
+}
+
+span {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: rgb(150, 167, 141) !important;
+}
+
+.bg-light {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+.btn-success {
+  background-color: rgb(150, 167, 141) !important;
+  border: none;
+}
+
+.btn-primary {
+  background-color: rgb(182, 206, 180) !important;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: rgb(217, 233, 207) !important;
+  border: none;
+}
+
+.nav-link {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+h1 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
