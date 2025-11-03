@@ -5,6 +5,7 @@ import News from "./pages/News"
 import Regions from "./pages/Regions"
 import Contact from "./pages/Contact"
 import { Route, Routes } from "react-router-dom"
+import ArticleDetail from "./components/ArticleDetail"
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/news" element={ <News></News> }></Route>
                     <Route path="/regions" element={ <Regions></Regions> }></Route>
                     <Route path="/contact" element={ <Contact></Contact> }></Route>
+                    <Route path="/articles/:id" element={<ArticleDetail></ArticleDetail>}></Route>
                 </Routes>
             </div>
         </>

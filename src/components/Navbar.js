@@ -6,7 +6,7 @@ export default function Navbar() {
     return (
         <Nav className="navbar navbar-expand-md navbar-dark sticky-top align-items-center justify-content-center">
             <Container className="container-xl justify-content-start">
-                <Link to="index.html" className="navbar-brand">
+                <Link to="/" className="navbar-brand">
                     <Container className="container align-items-center">
                         <img src="images/bazaar-logo.jpg" alt="logo" className="logo me-1 rounded d-inline"></img>
                         <p className="fw-bold text-light d-inline">One Ring Rentals</p>
