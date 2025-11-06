@@ -11,12 +11,12 @@
 
 .btn-primary {
   background-color: #efbb29 !important;
-  border: none;
+  border: none !important;
 }
 
 .btn-secondary {
   background-color: #ffde6a !important;
-  border: none;
+  border: none !important;
 }
 
 .btn-outline-primary {
@@ -223,4 +223,9 @@ section {
 /* === REGIONS PAGE === */
 .card-regions {
   max-width: 600px;
+}
+
+/* === CONTACT PAGE === */
+textarea {
+  height: 250px;
 }
