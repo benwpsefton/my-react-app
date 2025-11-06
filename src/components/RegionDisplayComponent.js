@@ -11,7 +11,7 @@ export default function RegionDisplayComponent() {
                 <Card className="card-regions text-center mb-3 p-0">
                     <Row className="g-0">
                         <Col md={4}>
-                            <img src={GetImage("regions", region)} alt="" className="card-regions-img img-fluid rounded-start"></img>
+                            <img src={GetImage("regions", region)} alt="region image" className="card-regions-img img-fluid rounded-start"></img>
                         </Col>
                         <Col md={8}>
                             <Card.Body>
