@@ -4,12 +4,11 @@ import { Container, Nav, Button } from "react-bootstrap"
 
 export default function Navbar() {
     return (
-        <Nav className="navbar navbar-expand-md navbar-dark sticky-top align-items-center justify-content-center">
-            <Container className="container-xl justify-content-start">
+        <Nav className="navbar navbar-expand-md sticky-top align-items-center justify-content-center">
+            <Container className="justify-content-start">
                 <Link to="/" className="navbar-brand">
-                    <Container className="container align-items-center">
-                        <img src="images/bazaar-logo.jpg" alt="logo" className="logo me-1 rounded d-inline"></img>
-                        <p className="fw-bold text-light d-inline">One Ring Rentals</p>
+                    <Container className="align-items-center">
+                        <img src="/assets/logo.png" className="logo d-inline" alt="logo"></img>
                     </Container>
                 </Link>
                 {/* toggle button for mobile nav */}
@@ -18,18 +17,18 @@ export default function Navbar() {
                 </Button>
                 {/* navbar links */}
                 <div className="collapse navbar-collapse justify-content-end" id="main-nav">
-                    <ul className="navbar-nav">
+                    <ul className="nav navbar-nav">
                         <li className="nav-item">
-                            <CustomLink to="/" className="nav-link text-light me-4">Home</CustomLink>
+                            <CustomLink to="/" className="nav-link me-4">Home</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <CustomLink to="/news" className="nav-link text-light me-4">News</CustomLink>
+                            <CustomLink to="/news" className="nav-link me-4">News</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <CustomLink to="/regions" className="nav-link text-light me-4">Regions</CustomLink>
+                            <CustomLink to="/regions" className="nav-link me-4">Regions</CustomLink>
                         </li>
                         <li className="nav-item">
-                            <CustomLink to="/contact" className="nav-link text-light me-4">Contact</CustomLink>
+                            <CustomLink to="/contact" className="nav-link me-4">Contact</CustomLink>
                         </li>
                     </ul>
                 </div>

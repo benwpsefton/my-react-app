@@ -11,7 +11,7 @@ export default function NewsArticleList() {
                 <Card className="text-center mb-5">
                     <Card.Title className="fs-4 mb-3">{article.title}</Card.Title>
                     <Container>
-                        <img className="card-img-top card-news-img mb-3" src={GetImage(article)} alt="preview"></img>
+                        <img className="card-img-top card-news-img mb-3" src={GetImage("articles", article)} alt="preview"></img>
                         <Button variant="primary" className="fs-5 mt-1 border-0">Read More</Button>
                     </Container>
                     <Row className="mb-2 py-4 news-row">

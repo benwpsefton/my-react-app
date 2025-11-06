@@ -1,3 +1,3 @@
-export default function GetImage(parameter) {
-    return "/assets/" + parameter.image + parameter.id + ".jpg"
+export default function GetImage(folder, parameter) {
+    return `/assets/${folder}/${parameter.image}${parameter.id}.jpg`
 }

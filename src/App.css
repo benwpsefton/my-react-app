@@ -1,83 +1,172 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* === COLOURS === */
+.navbar {
+  background-color: #fff !important;
+}
+
+.bg-light {
+  background-color: rgba(50,72,92,0.05) !important;
+}
+
+.btn-primary {
+  background-color: #efbb29 !important;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #ffde6a !important;
+  border: none;
+}
+
+.btn-outline-primary {
+  border-color: #efbb29 !important;
+  color: #efbb29 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #efbb29 !important;
+  color: #fff !important;
+}
+
+.btn-outline-secondary {
+  border-color: #ffde6a !important;
+  color: #ffde6a !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ffde6a !important;
+  color: #fff !important;
+}
+
+.color {
+  color: #202833;
+}
+
+/* === TYPOGRAPHY === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Raleway', sans-serif;
+	color: #202833;
+	font-weight: 300;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+h1{
+	font-size:21pt;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+h2{
+	font-size:17pt;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+h3{
+	font-weight:500;
+	font-size:15pt;
+	text-transform:none;
+}
+
+h4{
+	font-size:16px;
+	text-transform:none;
+	font-weight: 500;
+}
+
+h5{
+	font-size:14px;
+	text-transform:none;
+	line-height: 1.4;
+}
+
+h6{
+    color: #adb2b6;
+    font-size: 13px;
+    text-transform: none;
+    font-family: 'Open Sans', sans-serif;
+}
 
 /* === GLOBALS === */
 body {
-    margin-right: 0;
-    padding-right: 0;
-    overflow-x: hidden;
-    font-family: "Roboto", sans-serif;
+  margin-right: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+
+  color: #74777c;
+  background-color: #fff;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+a {
+  text-decoration: none;
 }
 
 section {
-    padding: 60px;
+  padding: 60px;
 }
 
 .wrapper {
   padding: 60px;
 }
 
-span {
-  font-family: "Roboto", sans-serif;
+.center {
+  text-align: center;
 }
 
-li {
-  font-family: "Roboto", sans-serif;
+.left {
+  text-align: left;
 }
 
-a {
-  text-decoration: none;
-}
-
-h1 {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+.right {
+  text-align: right;
 }
 
 .btn {
+  font-size: 13px;
+  padding: 0 16px;
+  border-width: 2px;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
 }
 
-/* === COLOURS === */
-.navbar {
-  background-color: rgb(150, 167, 141) !important;
-}
-
-.bg-light {
-  background-color: rgb(240, 240, 240) !important;
-}
-
-.btn-success {
-  background-color: rgb(150, 167, 141) !important;
-  border: none;
-}
-
-.btn-primary {
-  background-color: rgb(182, 206, 180) !important;
-  border: none;
-}
-
-.btn-secondary {
-  background-color: rgb(217, 233, 207) !important;
-  border: none;
-}
-
-/* === NAVIGATION PAGE === */
+/* === NAVIGATION === */
 /* Navbar */
+.navbar {
+  padding: 0 15px;
+  display: block;
+  text-transform: uppercase;
+}
+
 .nav-link {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  color: #74777c;
 }
 
 .navbar-brand {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .active {
   color: rgb(240, 240, 240);
   text-decoration: underline;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
 }
 
 /* === INDEX PAGE === */
@@ -89,7 +178,7 @@ h2 {
 .c-img {
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: brightness(0.9);
 }
 
@@ -129,4 +218,9 @@ h2 {
   text-align: center;
   gap: 1.5rem;
   margin: 0;
+}
+
+/* === REGIONS PAGE === */
+.card-regions {
+  max-width: 600px;
 }
