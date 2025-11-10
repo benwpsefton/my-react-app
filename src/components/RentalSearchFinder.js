@@ -33,9 +33,9 @@ export default function RentalSearchFinder() {
                     <Form onSubmit={handleSubmit}>
                         <Row>
                             <Col sm={3}>
+                            <Form.Control size="sm">
                                 <InputGroup className="d-block">
                                     <Form.Control
-                                        size="sm"
                                         name="arrival"
                                         placeholder="Arrive on..."
                                         type="date"
@@ -45,8 +45,10 @@ export default function RentalSearchFinder() {
                                         required
                                     ></Form.Control>
                                 </InputGroup>
+                            </Form.Control>
                             </Col>
                             <Col sm={3}>
+                            <Form.Control size="sm">
                                 <InputGroup className="d-block">
                                     <Form.Select
                                         size="sm"
@@ -61,8 +63,10 @@ export default function RentalSearchFinder() {
                                         ))}
                                     </Form.Select>
                                 </InputGroup>
+                            </Form.Control>
                             </Col>
                             <Col sm={3}>
+                            <Form.Control size="sm">
                                 <InputGroup className="d-block">
                                     <Form.Select
                                         size="sm"
@@ -77,8 +81,10 @@ export default function RentalSearchFinder() {
                                         ))}
                                     </Form.Select>
                                 </InputGroup>
+                            </Form.Control>
                             </Col>
                             <Col sm={3}>
+                            <Form.Control size="sm">
                                 <InputGroup className="d-block">
                                     <Form.Control
                                         size="lg"
@@ -93,6 +99,7 @@ export default function RentalSearchFinder() {
                                         Search
                                     </Button>
                                 </InputGroup>   
+                            </Form.Control>
                             </Col>
                         </Row>
                     </Form>
