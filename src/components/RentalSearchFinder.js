@@ -34,7 +34,7 @@ export default function RentalSearchFinder() {
                         <Row>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup>
+                                <InputGroup className="fs-5">
                                     <Form.Control
                                         name="arrival"
                                         placeholder="Arrive on..."
@@ -49,7 +49,7 @@ export default function RentalSearchFinder() {
                             </Col>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup>
+                                <InputGroup className="fs-5">
                                     <Form.Select
                                         size="sm"
                                         name="length"
@@ -67,7 +67,7 @@ export default function RentalSearchFinder() {
                             </Col>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup>
+                                <InputGroup className="fs-5">
                                     <Form.Select
                                         size="sm"
                                         name="bedrooms"
@@ -85,7 +85,7 @@ export default function RentalSearchFinder() {
                             </Col>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup>
+                                <InputGroup className="fs-5">
                                     <Form.Control
                                         size="lg"
                                         type="text"
