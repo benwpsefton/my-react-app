@@ -83,7 +83,7 @@ export default function RentalSearchFinder() {
                                 onChange={handleChange}
                                 placeholder="City, State, Country, etc..."
                                 required
-                            ></Form.Control>
+                            />
                             <Button type="submit" variant="primary">
                                 Search
                             </Button>
