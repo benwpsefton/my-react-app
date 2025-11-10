@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -15,19 +14,21 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: {
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "assets/[name][ext]",
-        },
-      },
+        type: 'asset/resource',
+      }
     ],
   },
   plugins: [
@@ -37,12 +38,14 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "public/assets", to: "assets" },
-        { from: "public/index.html", to: "404.html" },
       ],
     }),
   ],
   devServer: {
-    static: path.join(__dirname, "public"),
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
     historyApiFallback: true,
     port: 3000,
   },
