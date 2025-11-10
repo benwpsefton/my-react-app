@@ -41,9 +41,9 @@ export default function RentalSearchFinder() {
                                 onChange={handleChange}
                                 required
                             ></Form.Control>
-                            <InputGroup.Text>
+                            <Button className="input-group-addon">
                                 <i class="bi bi-calendar-event"></i>
-                            </InputGroup.Text>
+                            </Button>
                         </InputGroup>
                         <InputGroup>
                             <Form.Select
