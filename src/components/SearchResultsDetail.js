@@ -19,7 +19,7 @@ export default function SearchResultsDetail() {
         null;
     
     const data = cityQuery
-        ? { location: cityQuery, bedrooms: 0, length: 1 } // minimal requirements
+        ? { location: cityQuery, bedrooms: null, length: null }
         : formData;
 
     if (!data) {
@@ -43,8 +43,13 @@ export default function SearchResultsDetail() {
             item.state.toLowerCase().includes(data.location.toLowerCase()) ||
             item.region.toLowerCase().includes(data.location.toLowerCase());
 
-        const bedroomsMatch = item.bedrooms >= (data.bedrooms ? Number(data.bedrooms) : 0);
-        const lengthMatch = item.minNights <= (data.length ? Number(data.length) : 14);
+        const bedroomsMatch =
+            data.bedrooms === null ? true :
+            item.bedrooms >= (data.bedrooms === "5plus" ? 5 : Number(data.bedrooms));
+
+        const lengthMatch =
+            data.length === null ? true :
+            item.minNights <= Number(data.length);
 
         return locationMatch && bedroomsMatch && lengthMatch;
     });
