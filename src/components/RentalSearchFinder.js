@@ -3,7 +3,6 @@ import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 
 export default function RentalSearchFinder() {
-    // Initialise state for form inputs
     const [formData, setFormData] = useState({
         arrival: "",
         length: "",
@@ -12,10 +11,10 @@ export default function RentalSearchFinder() {
     })
 
     function handleChange(event) {
-        const { arrival, value } = event.target
+        const { name, value } = event.target
         setFormData(prevData => ({
             ...prevData,
-            [arrival]: value
+            [name]: value
         }))
     }
 
@@ -24,7 +23,7 @@ export default function RentalSearchFinder() {
         console.log("Form submitted:", formData)
         localStorage.setItem("RentalFormData", JSON.stringify(formData));
         alert(`Your request has been submitted!`)
-        window.location.reload();
+        window.location.reload(); // temporary
     }
 
     return(
@@ -47,65 +46,47 @@ export default function RentalSearchFinder() {
                             </InputGroup.Text>
                         </InputGroup>
                         <InputGroup>
-                            <Form.Control
+                            <Form.Select
                                 size="sm"
+                                name="length"
+                                value={formData.length}
+                                onChange={handleChange}
+                                required
                             >
-                                <select
-                                    id="search-status"
-                                    name="search-status"
-                                    data-placeholder="Stay..."
-                                >
-                                    <option value={""}></option>
-                                    <option value={"1"}>1 Night</option>
-                                    <option value={"2"}>2 Nights</option>
-                                    <option value={"3"}>3 Nights</option>
-                                    <option value={"4"}>4 Nights</option>
-                                    <option value={"5"}>5 Nights</option>
-                                    <option value={"6"}>6 Nights</option>
-                                    <option value={"7"}>7 Night</option>
-                                    <option value={"8"}>8 Nights</option>
-                                    <option value={"9"}>9 Nights</option>
-                                    <option value={"10"}>10 Nights</option>
-                                    <option value={"11"}>11 Nights</option>
-                                    <option value={"12"}>12 Nights</option>
-                                    <option value={"13"}>13 Nights</option>
-                                    <option value={"14"}>14 Nights</option>
-                                </select>
-                            </Form.Control>
+                                
+                                <option value={""}>Stay...</option>
+                                {[...Array(14)].map((_, i) => (
+                                    <option key={i + 1} value={i + 1}>{i + 1} Night{ i + 1 > 1 ? "s" : ""}</option>
+                                ))}
+                            </Form.Select>
                         </InputGroup>
                         <InputGroup>
-                            <Form.Control
+                            <Form.Select
                                 size="sm"
+                                name="bedrooms"
+                                value={formData.bedrooms}
+                                onChange={handleChange}
+                                required
                             >
-                                <select
-                                    id="search-bedrooms"
-                                    name="search-bedrooms"
-                                    data-placeholder="Bedrooms"
-                                >
-                                    <option value={""}></option>
-                                    <option value={"0"}>0</option>
-                                    <option value={"1"}>1</option>
-                                    <option value={"2"}>2</option>
-                                    <option value={"3"}>3</option>
-                                    <option value={"4"}>4</option>
-                                    <option value={"5"}>5</option>
-                                    <option value={"5plus"}>5+</option>
-                                </select>
-                            </Form.Control>
+                                <option value={""}>Bedrooms</option>
+                                {[0,1,2,3,4,5, "5plus"].map(val => (
+                                    <option key={val} value={val}>{val}</option>
+                                ))}
+                            </Form.Select>
                         </InputGroup>
                         <InputGroup>
                             <Form.Control
                                 size="lg"
+                                type="text"
+                                name="location"
+                                value={formData.location}
+                                onChange={handleChange}
+                                placeholder="City, State, Country, etc..."
+                                required
                             >
-                                <input
-                                    type="text"
-                                    name="location"
-                                    placeholder="City, State, Country, etc..."
-                                >
-                                <Button type="submit" variant="primary">
-                                    Search
-                                </Button>
-                                </input>
+                            <Button type="submit" variant="primary">
+                                Search
+                            </Button>
                             </Form.Control>
                         </InputGroup>
                     </Form>
