@@ -50,17 +50,13 @@ export default function RentalSearchFinder() {
                             <Col sm={3}>
                             <Container>
                                 <InputGroup>
-                                    <Form.Control
+                                    <Form.Select
                                         name="length"
-                                        type="text"
-                                        className="select-input"
                                         value={formData.length}
                                         onChange={handleChange}
+                                        label="Length of Stay..."
                                         required
-                                    />
-                                    <Form.Label className="select-label">Length of Stay...</Form.Label>
-
-                                    <Form.Select>
+                                    >
                                         {[...Array(14)].map((_, i) => (
                                             <option key={i + 1} value={i + 1}>{i + 1} Night{ i + 1 > 1 ? "s" : ""}</option>
                                         ))}
