@@ -23,16 +23,25 @@ export default function SearchResultsDetail() {
             </Container>
         );
     }
+    
+    const bedrooms = data.bedrooms === "5plus" ? 5 : Number(data.bedrooms);
+    const stayLength = Number(data.length);
 
-    // Filter rentals locally
-    const filtered = rentals.filter(item =>
-        item.location.toLowerCase().includes(data.location.toLowerCase()) &&
-        item.bedrooms >= Number(data.bedrooms) &&
-        item.minNights <= Number(data.length)
-    );
+    // Filter rentals based on user input
+    const filtered = rentals.filter((item) => {
+        const locationMatch =
+        item.city.toLowerCase().includes(data.location.toLowerCase()) ||
+        item.state.toLowerCase().includes(data.location.toLowerCase()) ||
+        item.country.toLowerCase().includes(data.location.toLowerCase()) ||
+        item.location.toLowerCase().includes(data.location.toLowerCase());
 
-    // State for results
-    const [results, setResults] = useState(filtered);
+        const bedroomsMatch = item.bedrooms >= bedrooms;
+        const lengthMatch = item.minNights <= stayLength;
+
+        return locationMatch && bedroomsMatch && lengthMatch;
+    });
+
+    const [results] = useState(filtered);
 
     return (
         <Container className="mt-4">
