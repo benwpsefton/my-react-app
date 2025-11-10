@@ -95,7 +95,7 @@ export default function RentalSearchFinder() {
                                         onChange={handleChange}
                                         required
                                     />
-                                    <Link to={`${process.env.PUBLIC_URL}/SearchResults`} className="text-decoration-none">
+                                    <Link to="/search-results" className="text-decoration-none">
                                         <Button type="submit" variant="primary"> Search </Button>
                                     </Link>
                                 </InputGroup>   
