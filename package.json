@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/benwpsefton/my-react-app/issues"
   },
-  "homepage": "https://github.com/benwpsefton/my-react-app",
+  "homepage": "https://github.com/benwpsefton/my-react-app/public/index.html",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^3.1.0",
     "bootstrap": "^5.3.8",
