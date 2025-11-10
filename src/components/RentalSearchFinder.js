@@ -95,9 +95,8 @@ export default function RentalSearchFinder() {
                                         onChange={handleChange}
                                         required
                                     />
-                                    <Link to="/search-results" className="text-decoration-none">
-                                        <Button type="submit" variant="primary"> Search </Button>
-                                    </Link>
+                                    
+                                    <Button type="submit" variant="primary"> Search </Button>
                                 </InputGroup>   
                             </Container>
                             </Col>
