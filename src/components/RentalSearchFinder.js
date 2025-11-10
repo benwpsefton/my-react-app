@@ -35,7 +35,7 @@ export default function RentalSearchFinder() {
                             <Form.Control
                                 size="sm"
                                 placeholder="Arrive on..."
-                                type="text"
+                                type="date"
                                 data-date-format="DD/MM/YYYY"
                                 value={formData.arrival}
                                 onChange={handleChange}
