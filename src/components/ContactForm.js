@@ -21,7 +21,9 @@ export default function ContactForm() {
     function handleSubmit(event) {
         event.preventDefault()
         console.log("Form submitted:", formData)
+        localStorage.setItem("contactFormData", JSON.stringify(formData));
         alert(`Your request has been submitted!`)
+        window.location.reload();
     }
 
     return (
@@ -34,22 +36,26 @@ export default function ContactForm() {
                             <InputGroup id="name" className="mb-3">
                                 <InputGroup.Text><i class="bi bi-person"></i></InputGroup.Text>
                                 <Form.Control
-                                type="name"
+                                type="text"
+                                name="name"
                                 placeholder="mario"
                                 value={formData.name}
                                 onChange={handleChange}
+                                required
                                 ></Form.Control>
                             </InputGroup>
                         </Col>
                         <Col>
                             <Form.Label>Email:</Form.Label>
-                            <InputGroup id="email" className="mb-3" onChange={handleChange}>
+                            <InputGroup id="email" className="mb-3">
                                 <InputGroup.Text><i class="bi bi-envelope"></i></InputGroup.Text>
                                 <Form.Control
                                 type="email"
+                                name="email"
                                 placeholder="mario@example.com"
                                 value={formData.email}
                                 onChange={handleChange}
+                                required
                                 ></Form.Control>
                             </InputGroup>
                         </Col>
@@ -57,24 +63,28 @@ export default function ContactForm() {
                 </Container>
                 <Container>
                     <Form.Label>Subject:</Form.Label>
-                    <InputGroup id="subject" className="mb-3" onChange={handleChange}>
+                    <InputGroup id="subject" className="mb-3">
                         <Form.Control
-                        type="subject"
+                        type="text"
+                        name="subject"
                         placeholder="Sydney Rental Enquiry"
                         value={formData.subject}
                         onChange={handleChange}
+                        required
                         ></Form.Control>
                     </InputGroup>
                 </Container>
                 <Container>
                     <Form.Label>Message:</Form.Label>
-                    <InputGroup id="message" className="mb-3" onChange={handleChange}>
+                    <InputGroup id="message" className="mb-3">
                         <Form.Control
-                        as={"textarea"}
+                        as="textarea"
+                        name="message"
                         rows={4}
                         placeholder="Please type your message here..."
                         value={formData.message}
                         onChange={handleChange}
+                        required
                         ></Form.Control>
                     </InputGroup>
                 </Container>

@@ -6,7 +6,7 @@ import GetImage from "./GetImage";
 
 export default function RegionDisplayComponent() {
     const regionItems = regions.map(region =>
-        <Col key={region.id} md={6}>
+        <Col key={region.id} md={6} className="text-center d-flex justify-content-center">
             <Link to={`/RentalFinder?${region.city}`} className="text-decoration-none">
                 <Card className="card-regions text-center mb-3 p-0">
                     <Row className="g-0">
