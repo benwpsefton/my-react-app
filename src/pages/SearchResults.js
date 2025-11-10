@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Container, Button } from "react-bootstrap";
-import { rentals } from "../data/rentals"
+import { Container, Button, Row, Col, Card } from "react-bootstrap";
+import { rentals } from "../data/rentals";
 
 export default function SearchResults() {
     const location = useLocation();
+
+    // Load form data from router state or localStorage fallback
     const data =
         location.state ||
         JSON.parse(localStorage.getItem("RentalFormData")) ||
@@ -21,54 +23,55 @@ export default function SearchResults() {
         );
     }
 
+    // Filter rentals locally
     const filtered = rentals.filter(item =>
-        item.location.includes(data.location) &&
+        item.location.toLowerCase().includes(data.location.toLowerCase()) &&
         item.bedrooms >= Number(data.bedrooms) &&
         item.minNights <= Number(data.length)
     );
 
-    useEffect(() => {
-        fetch(`/api/search?location=${data.location}&bedrooms=${data.bedrooms}`)
-            .then(r => r.json())
-            .then(setSearchResults);
-    }, []);
+    // State for results
+    const [results, setResults] = useState(filtered);
 
-    {results.length === 0 ? (
-        <h4>No properties found matching your criteria.</h4>
-    ) : (
-        <Row>
-            {results.map((rental) => (
-                <Col md={4} key={rental.id} className="mb-4">
-                    <Card className="h-100 shadow-sm">
-                        <Card.Img
-                        variant="top"
-                        src={`${process.env.PUBLIC_URL}/assets/rentals/${rental.image}`}
-                        alt={rental.title}
-                        style={{ height: "200px", objectFit: "cover" }}
-                        />
+    return (
+        <Container className="mt-4">
+            <h2 className="mb-4">Search Results</h2>
 
-                        <Card.Body>
-                            <Card.Title>{rental.title}</Card.Title>
+            {results.length === 0 ? (
+                <h4>No properties found matching your criteria.</h4>
+            ) : (
+                <Row>
+                    {results.map((rental) => (
+                        <Col md={4} key={rental.id} className="mb-4">
+                            <Card className="h-100 shadow-sm">
+                                <Card.Img
+                                    variant="top"
+                                    src={`${process.env.PUBLIC_URL}/assets/rentals/${rental.image}`}
+                                    alt={rental.title}
+                                    style={{ height: "200px", objectFit: "cover" }}
+                                />
 
-                            <Card.Text>
-                                <strong>Location:</strong> {rental.location} <br />
-                                <strong>Bedrooms:</strong> {rental.bedrooms} <br />
-                                <strong>Min Nights:</strong> {rental.minNights} <br />
-                                <strong>Price:</strong> ${rental.price}/night
-                            </Card.Text>
-                        </Card.Body>
+                                <Card.Body>
+                                    <Card.Title>{rental.title}</Card.Title>
 
-                        <Card.Footer className="bg-white border-0">
-                            <Button
-                                variant="primary"
-                                className="w-100"
-                            >
-                                View Property
-                            </Button>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
-    )}
+                                    <Card.Text>
+                                        <strong>Location:</strong> {rental.location} <br />
+                                        <strong>Bedrooms:</strong> {rental.bedrooms} <br />
+                                        <strong>Min Nights:</strong> {rental.minNights} <br />
+                                        <strong>Price:</strong> ${rental.price}/night
+                                    </Card.Text>
+                                </Card.Body>
+
+                                <Card.Footer className="bg-white border-0">
+                                    <Button variant="primary" className="w-100">
+                                        View Property
+                                    </Button>
+                                </Card.Footer>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
+            )}
+        </Container>
+    );
 }
