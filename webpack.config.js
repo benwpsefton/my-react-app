@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -39,6 +40,9 @@ module.exports = {
       patterns: [
         { from: "public/assets", to: "assets" },
       ],
+    }),
+    new webpack.DefinePlugin({
+      "process.env.PUBLIC_URL": JSON.stringify("/my-react-app"),
     }),
   ],
   devServer: {

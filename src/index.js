@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(
     <React.StrictMode>
-        <BrowserRouter basename="/my-react-app">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <App></App>
         </BrowserRouter>
     </React.StrictMode>
