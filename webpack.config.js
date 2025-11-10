@@ -34,7 +34,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      publicPath: "/my-react-app/",
+      publicPath: process.env.PUBLIC_URL || "/my-react-app/",
     }),
     new CopyPlugin({
       patterns: [
