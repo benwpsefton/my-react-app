@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function RentalSearchFinder() {
     const navigate = useNavigate();
