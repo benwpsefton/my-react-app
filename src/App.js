@@ -7,6 +7,8 @@ import Contact from "./pages/Contact"
 import { Route, Routes } from "react-router-dom"
 import ArticleDetail from "./components/ArticleDetail"
 
+console.log("PUBLIC_URL is:", process.env.PUBLIC_URL)
+
 function App() {
     return (
         <>

@@ -14,5 +14,3 @@ root.render(
         </BrowserRouter>
     </React.StrictMode>
 )
-
-console.log("PUBLIC_URL is:", process.env.PUBLIC_URL)
