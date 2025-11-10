@@ -71,18 +71,14 @@ export default function RentalSearchFinder() {
                             <Col sm={3}>
                             <Container>
                                 <InputGroup>
-                                    <Form.Control
+                                    <Form.Select
                                         name="bedrooms"
-                                        type="text"
-                                        className="select-input"
                                         value={formData.bedrooms}
                                         onChange={handleChange}
+                                        label="# of Bedrooms"
                                         required
-                                    />
-                                    <Form.Label className="select-label"># of Bedrooms</Form.Label>
-
-                                    <Form.Select>
-                                       {[0,1,2,3,4,5, "5plus"].map(val => (
+                                    >
+                                        {[0,1,2,3,4,5, "5plus"].map(val => (
                                             <option key={val} value={val}>{val}</option>
                                         ))}
                                     </Form.Select>
