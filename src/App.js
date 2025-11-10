@@ -22,6 +22,8 @@ function App() {
             </div>
         </>
     )
+
+    console.log("PUBLIC_URL is:", process.env.PUBLIC_URL);
 }
 
 export default App
