@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "predeploy": "npm start",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -20,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/benwpsefton/my-react-app/issues"
   },
-  "homepage": "https://github.com/benwpsefton/my-react-app/public/index.html",
+  "homepage": "https://github.com/benwpsefton/my-react-app",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^3.1.0",
     "bootstrap": "^5.3.8",
