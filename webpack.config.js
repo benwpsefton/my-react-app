@@ -34,10 +34,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      publicPath: "/my-react-app/",
     }),
     new CopyPlugin({
       patterns: [
         { from: "public/assets", to: "assets" },
+        { from: "public/index.html", to: "404.html" },
       ],
     }),
   ],
