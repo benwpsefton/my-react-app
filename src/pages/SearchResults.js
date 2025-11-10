@@ -46,10 +46,10 @@ export default function SearchResults() {
                             <Card className="h-100 shadow-sm">
                                 <Card.Img
                                     variant="top"
+                                    className="rental-card-img"
                                     src={`${process.env.PUBLIC_URL}/assets/rentals/${rental.image}`}
                                     alt={rental.title}
-                                    style={{ height: "200px", objectFit: "cover" }}
-                                />
+                                ></Card.Img>
 
                                 <Card.Body>
                                     <Card.Title>{rental.title}</Card.Title>
