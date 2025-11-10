@@ -22,7 +22,7 @@ export default function RentalSearchFinder() {
     function handleSubmit(event) {
         event.preventDefault()
         console.log("Form submitted:", formData)
-        localStorage.setItem("contactFormData", JSON.stringify(formData));
+        localStorage.setItem("RentalFormData", JSON.stringify(formData));
         alert(`Your request has been submitted!`)
         window.location.reload();
     }
