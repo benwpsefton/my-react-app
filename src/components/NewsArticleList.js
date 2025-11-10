@@ -7,7 +7,7 @@ import GetImage from "./GetImage";
 export default function NewsArticleList() {
     const listItems = articles.map(article =>
         <Col key={article.id} md={6}>
-            <Link to={`../pages/articles/${article.id}`} className="text-decoration-none">
+            <Link to={`/articles/${article.id}`} className="text-decoration-none">
                 <Card className="text-center mb-5">
                     <Card.Title className="fs-4 mb-3">{article.title}</Card.Title>
                     <Container>
