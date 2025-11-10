@@ -33,7 +33,7 @@ export default function RentalSearchFinder() {
                     <Form onSubmit={handleSubmit}>
                         <Row>
                             <Col sm={3}>
-                            <div className="form-control-small">
+                            <Container className="container-small">
                                 <InputGroup>
                                     <Form.Control
                                         name="arrival"
@@ -45,10 +45,10 @@ export default function RentalSearchFinder() {
                                         required
                                     ></Form.Control>
                                 </InputGroup>
-                            </div>
+                            </Container>
                             </Col>
                             <Col sm={3}>
-                            <div className="form-control-small">
+                            <Container className="container-small">
                                 <InputGroup>
                                     <Form.Select
                                         size="sm"
@@ -63,10 +63,10 @@ export default function RentalSearchFinder() {
                                         ))}
                                     </Form.Select>
                                 </InputGroup>
-                            </div>
+                            </Container>
                             </Col>
                             <Col sm={3}>
-                            <div className="form-control-small">
+                            <Container className="container-small">
                                 <InputGroup>
                                     <Form.Select
                                         size="sm"
@@ -81,10 +81,10 @@ export default function RentalSearchFinder() {
                                         ))}
                                     </Form.Select>
                                 </InputGroup>
-                            </div>
+                            </Container>
                             </Col>
                             <Col sm={3}>
-                            <div className="form-control-large">
+                            <Container className="container-large">
                                 <InputGroup>
                                     <Form.Control
                                         size="lg"
@@ -99,7 +99,7 @@ export default function RentalSearchFinder() {
                                         Search
                                     </Button>
                                 </InputGroup>   
-                            </div>
+                            </Container>
                             </Col>
                         </Row>
                     </Form>
