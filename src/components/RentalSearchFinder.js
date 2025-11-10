@@ -42,7 +42,7 @@ export default function RentalSearchFinder() {
                                 required
                             ></Form.Control>
                             <InputGroup.Text>
-                                <span class="glyphicon glyphicon-calendar"></span>
+                                <i class="bi bi-calendar-event"></i>
                             </InputGroup.Text>
                         </InputGroup>
                         <InputGroup>
@@ -53,7 +53,6 @@ export default function RentalSearchFinder() {
                                 onChange={handleChange}
                                 required
                             >
-                                
                                 <option value={""}>Stay...</option>
                                 {[...Array(14)].map((_, i) => (
                                     <option key={i + 1} value={i + 1}>{i + 1} Night{ i + 1 > 1 ? "s" : ""}</option>
@@ -83,7 +82,7 @@ export default function RentalSearchFinder() {
                                 onChange={handleChange}
                                 placeholder="City, State, Country, etc..."
                                 required
-                            />
+                            ></Form.Control>
                             <Button type="submit" variant="primary">
                                 Search
                             </Button>
