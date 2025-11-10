@@ -29,7 +29,7 @@ export default function RentalSearchFinder() {
     return(
         <Container className="wrapper">
             <Row>
-                <Col sm={3}>
+                <Col sm={12}>
                     <Form onSubmit={handleSubmit}>
                         <Row>
                             <Col sm={3}>
