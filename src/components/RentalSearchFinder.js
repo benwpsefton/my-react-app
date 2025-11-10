@@ -54,9 +54,9 @@ export default function RentalSearchFinder() {
                                         name="length"
                                         value={formData.length}
                                         onChange={handleChange}
-                                        label="Length of Stay..."
                                         required
                                     >
+                                        <option value="" selected hidden>Length of Stay...</option>
                                         {[...Array(14)].map((_, i) => (
                                             <option key={i + 1} value={i + 1}>{i + 1} Night{ i + 1 > 1 ? "s" : ""}</option>
                                         ))}
@@ -71,9 +71,9 @@ export default function RentalSearchFinder() {
                                         name="bedrooms"
                                         value={formData.bedrooms}
                                         onChange={handleChange}
-                                        label="# of Bedrooms"
                                         required
                                     >
+                                        <option value="" selected hidden># of Bedrooms</option>
                                         {[0,1,2,3,4,5, "5plus"].map(val => (
                                             <option key={val} value={val}>{val}</option>
                                         ))}
