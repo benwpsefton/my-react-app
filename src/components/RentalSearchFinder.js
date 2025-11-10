@@ -30,7 +30,7 @@ export default function RentalSearchFinder() {
         navigate("/search-results", { state: formData });
     }
 
-    return(
+    return (
         <Container className="wrapper">
             <Row>
                 <Col sm={12}>
@@ -95,9 +95,9 @@ export default function RentalSearchFinder() {
                                         onChange={handleChange}
                                         required
                                     />
-                                    <Button type="submit" variant="primary">
-                                        Search
-                                    </Button>
+                                    <Link to="/SearchResults.js" className="text-decoration-none">
+                                        <Button type="submit" variant="primary"> Search </Button>
+                                    </Link>
                                 </InputGroup>   
                             </Container>
                             </Col>
