@@ -3,15 +3,24 @@ import { Link, useLocation } from "react-router-dom";
 import { Container, Button, Row, Col, Card } from "react-bootstrap";
 import { rentals } from "../data/rentals";
 import GetImage from "./GetImage";
+import { useSearchParams } from "react-router-dom";
 
 export default function SearchResultsDetail() {
     const location = useLocation();
 
+    const [searchParams] = useSearchParams();
+    const cityQuery = searchParams.get("city");
+
+
     // Load form data from router state or localStorage fallback
-    const data =
+    const formData =
         location.state ||
         JSON.parse(localStorage.getItem("RentalFormData")) ||
         null;
+    
+    const data = cityQuery
+        ? { location: cityQuery, bedrooms: 0, length: 1 } // minimal requirements
+        : formData;
 
     if (!data) {
         return (
@@ -30,13 +39,12 @@ export default function SearchResultsDetail() {
     // Filter rentals based on user input
     const filtered = rentals.filter((item) => {
         const locationMatch =
-        item.city.toLowerCase().includes(data.location.toLowerCase()) ||
-        item.state.toLowerCase().includes(data.location.toLowerCase()) ||
-        item.country.toLowerCase().includes(data.location.toLowerCase()) ||
-        item.location.toLowerCase().includes(data.location.toLowerCase());
+            item.city.toLowerCase().includes(data.location.toLowerCase()) ||
+            item.state.toLowerCase().includes(data.location.toLowerCase()) ||
+            item.region.toLowerCase().includes(data.location.toLowerCase());
 
-        const bedroomsMatch = item.bedrooms >= bedrooms;
-        const lengthMatch = item.minNights <= stayLength;
+        const bedroomsMatch = item.bedrooms >= (data.bedrooms ? Number(data.bedrooms) : 0);
+        const lengthMatch = item.minNights <= (data.length ? Number(data.length) : 14);
 
         return locationMatch && bedroomsMatch && lengthMatch;
     });
