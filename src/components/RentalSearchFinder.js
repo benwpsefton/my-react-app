@@ -56,7 +56,7 @@ export default function RentalSearchFinder() {
                                         onChange={handleChange}
                                         required
                                     >
-                                        <option value={""}>Stay...</option>
+                                        <option value={""} placeholder="Stay..."></option>
                                         {[...Array(14)].map((_, i) => (
                                             <option key={i + 1} value={i + 1}>{i + 1} Night{ i + 1 > 1 ? "s" : ""}</option>
                                         ))}
@@ -73,7 +73,7 @@ export default function RentalSearchFinder() {
                                         onChange={handleChange}
                                         required
                                     >
-                                        <option value={""}>Bedrooms</option>
+                                        <option value={""} placeholder="Stay...">Bedrooms</option>
                                         {[0,1,2,3,4,5, "5plus"].map(val => (
                                             <option key={val} value={val}>{val}</option>
                                         ))}
