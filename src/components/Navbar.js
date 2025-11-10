@@ -8,7 +8,7 @@ export default function Navbar() {
             <Container className="justify-content-start">
                 <Link to="/" className="navbar-brand">
                     <Container className="align-items-center">
-                        <img src="/assets/logo.png" className="logo d-inline" alt="logo"></img>
+                        <img src={`${process.env.PUBLIC_URL}/assets/logo.png`} className="logo d-inline" alt="logo"></img>
                     </Container>
                 </Link>
                 {/* toggle button for mobile nav */}
