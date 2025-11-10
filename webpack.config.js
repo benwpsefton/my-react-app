@@ -43,11 +43,6 @@ module.exports = {
         { from: "public/index.html", to: "404.html" },
       ],
     }),
-    new webpack.DefinePlugin({
-      "process.env.PUBLIC_URL": JSON.stringify(
-        process.env.NODE_ENV === "production" ? "/my-react-app" : ""
-      ),
-    }),
   ],
   devServer: {
     static: {
