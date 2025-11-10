@@ -33,7 +33,7 @@ export default function RentalSearchFinder() {
                     <Form onSubmit={handleSubmit}>
                         <Row>
                             <Col sm={3}>
-                            <Container className="container-small">
+                            <Container>
                                 <InputGroup>
                                     <Form.Control
                                         name="arrival"
@@ -43,12 +43,12 @@ export default function RentalSearchFinder() {
                                         value={formData.arrival}
                                         onChange={handleChange}
                                         required
-                                    ></Form.Control>
+                                    />
                                 </InputGroup>
                             </Container>
                             </Col>
                             <Col sm={3}>
-                            <Container className="container-small">
+                            <Container>
                                 <InputGroup>
                                     <Form.Select
                                         size="sm"
@@ -66,7 +66,7 @@ export default function RentalSearchFinder() {
                             </Container>
                             </Col>
                             <Col sm={3}>
-                            <Container className="container-small">
+                            <Container>
                                 <InputGroup>
                                     <Form.Select
                                         size="sm"
@@ -84,7 +84,7 @@ export default function RentalSearchFinder() {
                             </Container>
                             </Col>
                             <Col sm={3}>
-                            <Container className="container-large">
+                            <Container>
                                 <InputGroup>
                                     <Form.Control
                                         size="lg"
@@ -94,7 +94,7 @@ export default function RentalSearchFinder() {
                                         onChange={handleChange}
                                         placeholder="City, State, Country, etc..."
                                         required
-                                    ></Form.Control>
+                                    />
                                     <Button type="submit" variant="primary">
                                         Search
                                     </Button>
