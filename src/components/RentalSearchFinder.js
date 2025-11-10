@@ -54,10 +54,9 @@ export default function RentalSearchFinder() {
                                         name="length"
                                         value={formData.length}
                                         onChange={handleChange}
-                                        data-placeholder="Stay..."
                                         required
                                     >
-                                        <option value={""}></option>
+                                        <option disabled selected>Length of Stay...</option>
                                         {[...Array(14)].map((_, i) => (
                                             <option key={i + 1} value={i + 1}>{i + 1} Night{ i + 1 > 1 ? "s" : ""}</option>
                                         ))}
@@ -72,10 +71,9 @@ export default function RentalSearchFinder() {
                                         name="bedrooms"
                                         value={formData.bedrooms}
                                         onChange={handleChange}
-                                        data-placeholder="Bedrooms"
                                         required
                                     >
-                                        <option value={""}></option>
+                                        <option disabled selected># of Bedrooms</option>
                                         {[0,1,2,3,4,5, "5plus"].map(val => (
                                             <option key={val} value={val}>{val}</option>
                                         ))}
@@ -91,7 +89,6 @@ export default function RentalSearchFinder() {
                                         name="location"
                                         value={formData.location}
                                         onChange={handleChange}
-                                        placeholder="City, State, Country, etc..."
                                         required
                                     />
                                     <Button type="submit" variant="primary">
