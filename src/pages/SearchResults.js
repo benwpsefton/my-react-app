@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
 import { rentals } from "../data/rentals"
 
