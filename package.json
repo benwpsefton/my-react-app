@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/benwpsefton/my-react-app/issues"
   },
-  "homepage": "https://github.com/benwpsefton/my-react-app",
+  "homepage": "https://benwpsefton.github.io/my-react-app/",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^3.1.0",
     "bootstrap": "^5.3.8",
