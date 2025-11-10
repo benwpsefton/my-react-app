@@ -42,7 +42,9 @@ module.exports = {
       ],
     }),
     new webpack.DefinePlugin({
-      "process.env.PUBLIC_URL": JSON.stringify("/my-react-app"),
+      "process.env": {
+        PUBLIC_URL: JSON.stringify("/my-react-app")
+      }
     }),
   ],
   devServer: {
