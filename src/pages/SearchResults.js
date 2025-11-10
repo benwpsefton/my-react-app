@@ -1,7 +1,7 @@
 import React from "react";
 import SearchResultsDetail from "../components/SearchResultsDetail";
 
-export function SearchResults() {
+export default function SearchResults() {
     return (
         <SearchResultsDetail></SearchResultsDetail>
     )
