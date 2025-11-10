@@ -37,6 +37,13 @@ module.exports = {
       template: "./public/index.html",
       publicPath: process.env.PUBLIC_URL || "/my-react-app/",
     }),
+    new webpack.DefinePlugin({
+      "process.env.PUBLIC_URL": JSON.stringify(
+        process.env.NODE_ENV === "production"
+          ? "/my-react-app"
+          : ""
+      ),
+    }),
     new CopyPlugin({
       patterns: [
         { from: "public/assets", to: "assets" },
