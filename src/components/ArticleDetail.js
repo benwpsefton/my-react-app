@@ -24,7 +24,7 @@ export default function ArticleDetail() {
       <Col sm={8}>
         <h1 className="mb-4">{article.title}</h1>
         <img
-          src={GetImage(article)}
+          src={GetImage("articles", article)}
           alt={article.title}
           className="img-fluid mb-4"
         ></img>
