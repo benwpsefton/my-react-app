@@ -47,7 +47,7 @@ export default function SearchResults() {
                                 <Card.Img
                                     variant="top"
                                     className="rental-card-img"
-                                    src={`${process.env.PUBLIC_URL}/assets/rentals/${rental.image}`}
+                                    src={GetImage("rentals", rental)}
                                     alt={rental.title}
                                 ></Card.Img>
 
