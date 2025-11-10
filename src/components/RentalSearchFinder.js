@@ -1,8 +1,11 @@
 import React from "react";
 import { Container, Row, Col, Button, Form, InputGroup } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function RentalSearchFinder() {
+    const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         arrival: "",
         length: "",
@@ -21,9 +24,10 @@ export default function RentalSearchFinder() {
     function handleSubmit(event) {
         event.preventDefault()
         console.log("Form submitted:", formData)
+
         localStorage.setItem("RentalFormData", JSON.stringify(formData));
-        alert(`Your request has been submitted!`)
-        window.location.reload(); // temporary
+        
+        navigate("/search-results", { state: formData });
     }
 
     return(

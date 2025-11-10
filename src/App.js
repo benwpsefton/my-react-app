@@ -6,6 +6,7 @@ import Regions from "./pages/Regions"
 import Contact from "./pages/Contact"
 import { Route, Routes } from "react-router-dom"
 import ArticleDetail from "./components/ArticleDetail"
+import SearchResults from "./pages/SearchResults"
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/regions" element={ <Regions></Regions> }></Route>
                     <Route path="/contact" element={ <Contact></Contact> }></Route>
                     <Route path="/articles/:id" element={<ArticleDetail></ArticleDetail>}></Route>
+                    <Route path="/search-results" element={<SearchResults></SearchResults>}></Route>
                 </Routes>
             </div>
         </>
