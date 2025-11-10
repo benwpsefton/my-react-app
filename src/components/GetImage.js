@@ -1,3 +1,3 @@
 export default function GetImage(folder, parameter) {
-    return `/assets/${folder}/${parameter.image}${parameter.id}.jpg`
+    return `${process.env.PUBLIC_URL}/assets/${folder}/${parameter.image}${parameter.id}.jpg`
 }
