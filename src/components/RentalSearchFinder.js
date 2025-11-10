@@ -34,7 +34,7 @@ export default function RentalSearchFinder() {
                         <Row>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup className="fs-5">
+                                <InputGroup>
                                     <Form.Control
                                         name="arrival"
                                         placeholder="Arrive on..."
@@ -49,9 +49,8 @@ export default function RentalSearchFinder() {
                             </Col>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup className="fs-5">
+                                <InputGroup>
                                     <Form.Select
-                                        size="sm"
                                         name="length"
                                         value={formData.length}
                                         onChange={handleChange}
@@ -67,9 +66,8 @@ export default function RentalSearchFinder() {
                             </Col>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup className="fs-5">
+                                <InputGroup>
                                     <Form.Select
-                                        size="sm"
                                         name="bedrooms"
                                         value={formData.bedrooms}
                                         onChange={handleChange}
@@ -85,9 +83,8 @@ export default function RentalSearchFinder() {
                             </Col>
                             <Col sm={3}>
                             <Container>
-                                <InputGroup className="fs-5">
+                                <InputGroup>
                                     <Form.Control
-                                        size="lg"
                                         type="text"
                                         name="location"
                                         value={formData.location}
