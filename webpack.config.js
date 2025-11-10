@@ -44,6 +44,7 @@ module.exports = {
       ],
     }),
     new webpack.DefinePlugin({
+    "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "production"),
     "process.env.PUBLIC_URL": JSON.stringify("/my-react-app"),
     }),
   ],
