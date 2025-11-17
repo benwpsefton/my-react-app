@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/my-react-app/",
+    publicPath: "/assessment-2-components-benwpsefton/",
   },
   module: {
     rules: [
@@ -43,7 +43,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env": {
-        PUBLIC_URL: JSON.stringify("/my-react-app")
+        PUBLIC_URL: JSON.stringify("/assessment-2-components-benwpsefton")
       }
     }),
   ],

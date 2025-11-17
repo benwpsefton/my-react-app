@@ -1,5 +1,5 @@
 {
-  "name": "my-react-app",
+  "name": "assessment-2-components-benwpsefton",
   "version": "1.0.0",
   "description": "First, create a new directory for your project and navigate into it:",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benwpsefton/my-react-app.git"
+    "url": "git+https://github.com/benwpsefton/assessment-2-components-benwpsefton.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/benwpsefton/my-react-app/issues"
+    "url": "https://github.com/benwpsefton/assessment-2-components-benwpsefton/issues"
   },
-  "homepage": "https://benwpsefton.github.io/my-react-app",
+  "homepage": "https://NM-TAFE.github.io/assessment-2-components-benwpsefton",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^3.1.0",
     "bootstrap": "^5.3.8",
