@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/assessment-2-components-benwpsefton/",
+    publicPath: process.env.NODE_ENV === "production" ? "/my-react-app/" : "/",
   },
   module: {
     rules: [
